@@ -11,8 +11,8 @@ ingredients2 = {'milk': 1288, 'flour': 9, 'sugar': 95}
 recipe3 = {'milk': 100, 'butter': 50, 'cheese': 10}
 ingredients3 = {'milk': 198, 'butter': 52, 'cheese': 10}
 
-recipe4 = { 'milk': 2, 'sugar': 40, 'butter': 20 }
-ingredients4 = { 'milk': 5, 'sugar': 120, 'butter': 500 }
+recipe4 = {'milk': 2, 'sugar': 40, 'butter': 20}
+ingredients4 = {'milk': 5, 'sugar': 120, 'butter': 500}
 
 
 def recipe_batches(recipe, ingredients):
@@ -22,7 +22,9 @@ def recipe_batches(recipe, ingredients):
         return 0
     # create a number_of_batches list variable
     number_of_batches = []
+    # for each same key in recipe and value
     for recipe_key, recipe_value in recipe.items():
+        # check number of times value in ingredients can be divided by value in recipe
         for ingredients_key, ingredients_value in ingredients.items():
             if recipe_key == ingredients_key and ingredients_value // recipe_value <= 0:
                 return 0
@@ -32,9 +34,6 @@ def recipe_batches(recipe, ingredients):
     minimum_batch = min(number_of_batches)
     return minimum_batch
 
-    # for each same key in recipe and value
-
-    # check number of times value in ingredients can be divided by value in recipe
     # if 0, return 0
     # if number of times value in ingredients can be divided by value in recipe is less than
     #   number_of_batches but more than 0 save to number_of_batches
