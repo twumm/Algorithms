@@ -26,18 +26,18 @@ def recipe_batches(recipe, ingredients):
     for recipe_key, recipe_value in recipe.items():
         # check number of times value in ingredients can be divided by value in recipe
         for ingredients_key, ingredients_value in ingredients.items():
+            # if 0, return 0
             if recipe_key == ingredients_key and ingredients_value // recipe_value <= 0:
                 return 0
-            if recipe_key == ingredients_key and ingredients_value // recipe_value > 0:
-                temp = ingredients_value // recipe_value
-                number_of_batches.append(temp)
-    minimum_batch = min(number_of_batches)
-    return minimum_batch
-
-    # if 0, return 0
     # if number of times value in ingredients can be divided by value in recipe is less than
     #   number_of_batches but more than 0 save to number_of_batches
-    # return number_of_batches
+            if recipe_key == ingredients_key and ingredients_value // recipe_value > 0:
+                temp = ingredients_value // recipe_value
+                # save to number_of_batches list
+                number_of_batches.append(temp)
+    # return minimum number from number_of_batches list
+    minimum_batch = min(number_of_batches)
+    return minimum_batch
 
 
 # print(1288 // 100)
