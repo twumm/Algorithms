@@ -13,7 +13,7 @@ def rock_paper_scissors(n):
       if rounds == 0:
         return permutations.append(results)
       
-      for i in range(len(options) - 1):
+      for i in range(len(options)):
         new_result = results + [options[i]]
         find_results(rounds - 1, new_result)
     
