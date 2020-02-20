@@ -14,7 +14,7 @@ ingredients3 = {'milk': 198, 'butter': 52, 'cheese': 10}
 recipe4 = {'milk': 2, 'sugar': 40, 'butter': 20}
 ingredients4 = {'milk': 5, 'sugar': 120, 'butter': 500}
 
-
+# make use of dictionary methods to check keys
 def recipe_batches(recipe, ingredients):
     # check if length of recipe are less or same as ingredient length
     if (len(ingredients) < len(recipe)):

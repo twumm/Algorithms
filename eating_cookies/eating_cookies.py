@@ -9,16 +9,16 @@ import sys
 
 def eating_cookies(n, cache=None):
     # set a list to contain the list of possible combinations
-    if n <= 0:
-        return 1
-    elif n == 1:
+    if n < 0:
+        return 0
+    elif n == 0:
         return 1
     else:
-        return eating_cookies(n - 1) + eating_cookies(n - 2)
+        return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
     # pass
 
 
-print(eating_cookies(20))
+# print(eating_cookies(20))
 
 # Python program to display the Fibonacci sequence
 
@@ -38,9 +38,9 @@ print(eating_cookies(20))
 #    for i in range(nterms):
 #        print(recur_fibo(i))
 
-# if __name__ == "__main__":
-#   if len(sys.argv) > 1:
-#     num_cookies = int(sys.argv[1])
-#     print("There are {ways} ways for Cookie Monster to eat {n} cookies.".format(ways=eating_cookies(num_cookies), n=num_cookies))
-#   else:
-#     print('Usage: eating_cookies.py [num_cookies]')
+if __name__ == "__main__":
+  if len(sys.argv) > 1:
+    num_cookies = int(sys.argv[1])
+    print("There are {ways} ways for Cookie Monster to eat {n} cookies.".format(ways=eating_cookies(num_cookies), n=num_cookies))
+  else:
+    print('Usage: eating_cookies.py [num_cookies]')
